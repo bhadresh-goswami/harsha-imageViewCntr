@@ -19,6 +19,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBOutlet weak var imgView: UIImageView!
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape{
+            imgView.image = #imageLiteral(resourceName: "backLandscap")
+        }
+        else if UIDevice.current.orientation.isPortrait{
+            imgView.image = #imageLiteral(resourceName: "backPotrait")
+        }
+    }
 
 
 }
